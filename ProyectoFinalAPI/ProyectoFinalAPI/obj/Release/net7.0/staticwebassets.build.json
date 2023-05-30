@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "Hash": "jqZjCAsig8xO/UcSxE06k9ZY7nLgfbgvXuLqNeX6S4Y=",
+  "Source": "ProyectoFinalAPI",
+  "BasePath": "_content/ProyectoFinalAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ProyectoFinalAPI\\wwwroot",
+      "Source": "ProyectoFinalAPI",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinalAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
+      "SourceId": "ProyectoFinalAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinalAPI",
+      "RelativePath": "grafica.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\grafica.html"
+    },
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\index.html",
+      "SourceId": "ProyectoFinalAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinalAPI",
+      "RelativePath": "index.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\Productos.html",
+      "SourceId": "ProyectoFinalAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/ProyectoFinalAPI",
+      "RelativePath": "Productos.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Productos.html"
+    }
+  ]
+}

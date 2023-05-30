@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/rowgroup/1.3.1/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+</head>
+<body>
+
+    <h2 id="titulo"></h2>
+
+    <input type="text" id="inputYear" placeholder="Ingresa el año" />
+    <button id="btnBuscar">Buscar</button>
+
+    <table id="tblProductos" class="display" style="width:100%"></table>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
+    <script>
+
+        var inputYear = document.getElementById('inputYear');
+        var btnBuscar = document.getElementById('btnBuscar');
+        var titulo = document.getElementById('titulo');
+        var tabla;
+
+        btnBuscar.addEventListener('click', function () {
+            var year = inputYear.value;
+            var url = "http://localhost:83/Product/GetTopFiveProducts/" + year;
+
+            fetch(url)
+                .then(response => response.json())
+                .then(info => {
+                    var idTabla = '#tblProductos';
+
+                    // Verificar si la DataTable ya existe y destruirla
+                    if (tabla && $.fn.DataTable.isDataTable(idTabla)) {
+                        tabla.destroy();
+                    }
+
+                    titulo.textContent = "Top 5 productos (trimestre) del año " + year;
+
+                    tabla = $(idTabla).DataTable({
+                        data: info,
+                        columns: [
+                            {
+                                title: 'Producto', data: 'nombre', render: $.fn.dataTable.render.text()
+                            },
+                            {
+                                title: 'Trimestre', data: 'trimestre', render: $.fn.dataTable.render.number()
+                            },
+                            {
+                                title: 'Unidades Vendidas', data: 'unidadesVendidas', render: $.fn.dataTable.render.number()
+                            }
+                        ],
+                        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                            // Añadir estilo a una fila o columna dependiendo de algún valor
+                        },
+                        "fnInitComplete": function (oSettings, json) {
+                            // Configuración de los filtros individuales
+                        },
+                        dom: 'Bfrtip',
+                        colReorder: true,
+                        buttons: [
+                            'colvis'
+                        ],
+                        order: [[1, 'asc']],
+                        rowGroup: {
+                            startRender: null,
+                            endRender: function (rows, group) {
+                                var sum = rows
+                                    .data()
+                                    .pluck('unidadesVendidas')
+                                    .reduce(function (a, b) {
+                                        return a + b;
+                                    }, 0);
+                                return 'Total Trimestre ' + group + ': ' + sum;
+                            },
+                            dataSrc: 'trimestre'
+                        },
+                        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]]
+                    });
+
+                })
+                .catch(error => console.log(error));
+        });
+    </script>
+</body>
+</html>
