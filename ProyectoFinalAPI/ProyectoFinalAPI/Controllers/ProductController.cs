@@ -254,8 +254,98 @@ namespace ProyectoFinalAPI.Controllers
             return result;
         }
 
+        [HttpGet]
+        [Route("GetDesgloseVentasMensuales")]
+        public IEnumerable<object> GetDesgloseVentasMensuales(string productName)
+        {
+            IEnumerable<object> lista =
+                contexto.Products
+                .Join(contexto.OrderDetails,
+                    p => p.ProductId,
+                    od => od.ProductId,
+                    (p, od) => new
+                    {
+                        Producto = p.ProductName,
+                        Fecha = od.Order.OrderDate,
+                        Ventas = od.Quantity * od.UnitPrice
+                    })
+                .Where(pod => pod.Producto == productName)
+                .ToList() // Ejecutar la consulta y obtener los datos en memoria
+                .GroupBy(pod => new { Fecha = pod.Fecha.HasValue ? new { Year = pod.Fecha.Value.Year, Month = pod.Fecha.Value.Month } : null })
+                .OrderBy(podGroup => podGroup.Key.Fecha != null ? podGroup.Key.Fecha.Year : 0)
+                .ThenBy(podGroup => podGroup.Key.Fecha != null ? podGroup.Key.Fecha.Month : 0)
+                .Select(podGroup =>
+                    new
+                    {
+                        Mes = podGroup.Key.Fecha != null ? $"{podGroup.Key.Fecha.Year}-{podGroup.Key.Fecha.Month:00}" : string.Empty,
+                        Ventas = podGroup.Sum(pod => pod.Ventas)
+                    });
+
+            return lista;
+        }
+
+        [HttpGet]
+        [Route("GetDesgloseVentasMensualesChart")]
+        public Dictionary<string, decimal> GetDesgloseVentasMensualesChart(string productName)
+        {
+            var data = new Dictionary<string, decimal>();
+
+            var results = contexto.Products
+                .Join(contexto.OrderDetails,
+                    p => p.ProductId,
+                    od => od.ProductId,
+                    (p, od) => new
+                    {
+                        Producto = p.ProductName,
+                        Fecha = od.Order.OrderDate,
+                        Ventas = od.Quantity * od.UnitPrice
+                    })
+                .Where(pod => pod.Producto == productName)
+                .ToList()
+                .GroupBy(pod => new { Fecha = pod.Fecha.HasValue ? new { Year = pod.Fecha.Value.Year, Month = pod.Fecha.Value.Month } : null })
+                .OrderBy(podGroup => podGroup.Key.Fecha != null ? podGroup.Key.Fecha.Year : 0)
+                .ThenBy(podGroup => podGroup.Key.Fecha != null ? podGroup.Key.Fecha.Month : 0)
+                .Select(podGroup =>
+                    new
+                    {
+                        Mes = podGroup.Key.Fecha != null ? $"{podGroup.Key.Fecha.Year}-{podGroup.Key.Fecha.Month:00}" : string.Empty,
+                        Ventas = podGroup.Sum(pod => pod.Ventas)
+                    });
+
+            foreach (var result in results)
+            {
+                data.Add(result.Mes, result.Ventas);
+            }
+
+            return data;
+        }
+        [HttpPost]
+        [Route("GetSales")]
+        public IEnumerable<object> GetSalesByMonth([FromBody] SalesRequest request)
+        {
+            DateTime startDate = request.StartDate;
+            DateTime endDate = request.EndDate;
+            var result =
+                from o in contexto.Order
+                join od in contexto.OrderDetails on o.OrderId equals od.OrderId
+                where o.OrderDate >= startDate && o.OrderDate <= endDate
+                group new { od.UnitPrice, od.Quantity } by new { Year = o.OrderDate.Value.Year, Month = o.OrderDate.Value.Month } into g
+                orderby g.Key.Year, g.Key.Month
+                select new
+                {
+                    YearMonth = g.Key.Year * 100 + g.Key.Month,
+                    Sales = g.Sum(x => x.UnitPrice * x.Quantity)
+                };
+
+            return result;
+        }
 
 
+        public class SalesRequest
+        {
+            public DateTime StartDate { get; set; }
+            public DateTime EndDate { get; set; }
+        }
 
     }
 }
