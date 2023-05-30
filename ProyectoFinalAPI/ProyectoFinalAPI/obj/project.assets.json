@@ -2998,11 +2998,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI.csproj",
       "projectName": "ProyectoFinalAPI",
       "projectPath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI.csproj",
       "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
+      "projectName": "APIWebNWind",
+      "projectPath": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
+      "packagesPath": "C:\\Users\\Giovanny\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\obj\\",
+>>>>>>> 08e866fff20258418e0800c61aaa9bfa71ec07f7
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",

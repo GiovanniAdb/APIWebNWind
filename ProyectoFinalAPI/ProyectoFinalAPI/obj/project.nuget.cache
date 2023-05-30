@@ -1,8 +1,14 @@
 {
   "version": 2,
+<<<<<<< HEAD
   "dgSpecHash": "RVGRoIAmV9Fg69KyqK8YxSIXZrnbPQX+BBkV+pG8y0tdxB2Eat0exP447Hc1G2e4b4ObVfSY41cXuQDc4q4eQA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI.csproj",
+=======
+  "dgSpecHash": "Rdeozugq5LNUzxb1+ecgqXeHj6qGNrGNPZea6BM9eQ3FgGdc1tu20Ni6FlUU2kf0jCjGjbFXgJPo4uQmp4Z0ug==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
+>>>>>>> 08e866fff20258418e0800c61aaa9bfa71ec07f7
   "expectedPackageFiles": [
     "C:\\Users\\Mario\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Mario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",

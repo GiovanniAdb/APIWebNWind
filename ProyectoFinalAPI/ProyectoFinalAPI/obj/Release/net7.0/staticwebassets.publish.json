@@ -1,27 +1,44 @@
 {
   "Version": 1,
-  "Hash": "b4leCYk1z6Fx8+txE6hQkctidv2NHgU/imfPc4/GpuA=",
-  "Source": "ProyectoFinalAPI",
-  "BasePath": "_content/ProyectoFinalAPI",
+  "Hash": "oUcIIrm/tB1u33603Fb0OT5MphTi3bMycwzVJ1teNO0=",
+  "Source": "APIWebNWind",
+  "BasePath": "_content/APIWebNWind",
   "Mode": "Default",
   "ManifestType": "Publish",
   "ReferencedProjectsConfiguration": [],
   "DiscoveryPatterns": [
     {
-      "Name": "ProyectoFinalAPI\\wwwroot",
-      "Source": "ProyectoFinalAPI",
+      "Name": "APIWebNWind\\wwwroot",
+      "Source": "APIWebNWind",
       "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
-      "BasePath": "_content/ProyectoFinalAPI",
+      "BasePath": "_content/APIWebNWind",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
-      "SourceId": "ProyectoFinalAPI",
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\comportamiento.html",
+      "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
-      "BasePath": "_content/ProyectoFinalAPI",
+      "BasePath": "_content/APIWebNWind",
+      "RelativePath": "comportamiento.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\comportamiento.html"
+    },
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
+      "SourceId": "APIWebNWind",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/APIWebNWind",
       "RelativePath": "grafica.html",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -35,10 +52,10 @@
     },
     {
       "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\index.html",
-      "SourceId": "ProyectoFinalAPI",
+      "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
-      "BasePath": "_content/ProyectoFinalAPI",
+      "BasePath": "_content/APIWebNWind",
       "RelativePath": "index.html",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -52,10 +69,10 @@
     },
     {
       "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\Productos.html",
-      "SourceId": "ProyectoFinalAPI",
+      "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
-      "BasePath": "_content/ProyectoFinalAPI",
+      "BasePath": "_content/APIWebNWind",
       "RelativePath": "Productos.html",
       "AssetKind": "All",
       "AssetMode": "All",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Productos.html"
+    },
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\terceraConsulta.html",
+      "SourceId": "APIWebNWind",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/APIWebNWind",
+      "RelativePath": "terceraConsulta.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\terceraConsulta.html"
     }
   ]
 }
