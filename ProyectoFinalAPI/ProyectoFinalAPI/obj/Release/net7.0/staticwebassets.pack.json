@@ -5,12 +5,20 @@
       "PackagePath": "staticwebassets\\Productos.html"
     },
     {
+      "Id": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\comportamiento.html",
+      "PackagePath": "staticwebassets\\comportamiento.html"
+    },
+    {
       "Id": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
       "PackagePath": "staticwebassets\\grafica.html"
     },
     {
       "Id": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\terceraConsulta.html",
+      "PackagePath": "staticwebassets\\terceraConsulta.html"
     },
     {
       "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.APIWebNWind.Microsoft.AspNetCore.StaticWebAssets.props",

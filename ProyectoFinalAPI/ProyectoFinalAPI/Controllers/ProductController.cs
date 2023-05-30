@@ -254,6 +254,32 @@ namespace ProyectoFinalAPI.Controllers
             return result;
         }
 
+        [HttpGet]
+        [Route("GetSalesByProduct/{startDate}/{endDate}")]
+        public IEnumerable<object> GetSalesByProduct(DateTime startDate, DateTime endDate)
+        {
+            var result = contexto.Products
+                .Join(contexto.OrderDetails,
+                    p => p.ProductId,
+                    od => od.ProductId,
+                    (p, od) => new { Product = p, OrderDetail = od })
+                .Join(contexto.Order,
+                    join1 => join1.OrderDetail.OrderId,
+                    o => o.OrderId,
+                    (join1, o) => new { join1.Product, join1.OrderDetail, Order = o })
+                .Where(join2 => join2.Order.OrderDate >= startDate && join2.Order.OrderDate <= endDate)
+                .GroupBy(join2 => join2.Product.ProductName)
+                .Select(group => new
+                {
+                    ProductName = group.Key,
+                    TotalSales = group.Sum(g => g.OrderDetail.Quantity)
+                })
+                .OrderByDescending(item => item.TotalSales)
+                .Take(5);
+
+            return result;
+        }
+
 
 
 

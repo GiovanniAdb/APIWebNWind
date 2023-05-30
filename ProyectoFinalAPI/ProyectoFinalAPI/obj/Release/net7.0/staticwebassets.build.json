@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "GH0qDeyeIJ2IUIs6RraDX5Vcd2EoH6Hlm2kjYCDfuqw=",
+  "Hash": "pCXyv1YRzstq2rZTf3Gu+mHNfQfr0IF8/qqQED5lCTU=",
   "Source": "APIWebNWind",
   "BasePath": "_content/APIWebNWind",
   "Mode": "Default",
@@ -16,6 +16,23 @@
     }
   ],
   "Assets": [
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\comportamiento.html",
+      "SourceId": "APIWebNWind",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/APIWebNWind",
+      "RelativePath": "comportamiento.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\comportamiento.html"
+    },
     {
       "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
       "SourceId": "APIWebNWind",
@@ -66,6 +83,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\Productos.html"
+    },
+    {
+      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\terceraConsulta.html",
+      "SourceId": "APIWebNWind",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "BasePath": "_content/APIWebNWind",
+      "RelativePath": "terceraConsulta.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\terceraConsulta.html"
     }
   ]
 }
