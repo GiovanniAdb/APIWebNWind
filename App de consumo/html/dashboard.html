@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        google.charts.load('current', { 'packages': ['corechart'] });
+        google.charts.setOnLoadCallback(function () {
+            drawChart();
+        });
+
+        function drawChart() {
+            $.ajax({
+                url: '/api/product/GetDesgloseVentasMensuales?productName=ikura',
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    var chartData = [['Mes', 'Ventas']];
+
+                    $.each(data, function (mes, ventas) {
+                        chartData.push([mes, ventas]);
+                    });
+
+                    var options = {
+                        title: 'Desglose de ventas mensuales',
+                        hAxis: { title: 'Mes' },
+                        vAxis: { title: 'Ventas' },
+                        legend: 'none'
+                    };
+
+                    var chart = new google.visualization.ColumnChart(document.getElementById('primera-consulta'));
+                    chart.draw(google.visualization.arrayToDataTable(chartData), options);
+                },
+                error: function () {
+                    console.error('Error al obtener los datos del servidor.');
+                }
+            });
+        }
+    </script>
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div id="primera-consulta"></div>
+    <div id="segunda-consulta"></div>
+    <div id="tercera-consulta"></div>
+</body>
+</html>
