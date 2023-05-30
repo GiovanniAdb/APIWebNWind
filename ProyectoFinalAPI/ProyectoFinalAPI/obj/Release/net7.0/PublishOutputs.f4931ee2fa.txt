@@ -1,9 +1,9 @@
-C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\ProyectoFinalAPI.exe
+C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\APIWebNWind.exe
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\appsettings.Development.json
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\appsettings.json
-C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\ProyectoFinalAPI.dll
-C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\ProyectoFinalAPI.runtimeconfig.json
-C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\ProyectoFinalAPI.pdb
+C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\APIWebNWind.dll
+C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\APIWebNWind.runtimeconfig.json
+C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\APIWebNWind.pdb
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\Google.Protobuf.dll
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\K4os.Compression.LZ4.dll
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\K4os.Compression.LZ4.Streams.dll
@@ -35,4 +35,4 @@ C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\o
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Drawing.Common.dll
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\ProyectoFinalAPI.deps.json
+C:\Users\Giovanny\Downloads\ProyectoFinalAPI\ProyectoFinalAPI\ProyectoFinalAPI\obj\Release\net7.0\PubTmp\Out\APIWebNWind.deps.json

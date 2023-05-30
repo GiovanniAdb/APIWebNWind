@@ -13,20 +13,20 @@
       "PackagePath": "staticwebassets\\index.html"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.ProyectoFinalAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.APIWebNWind.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.ProyectoFinalAPI.props",
-      "PackagePath": "build\\ProyectoFinalAPI.props"
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.build.APIWebNWind.props",
+      "PackagePath": "build\\APIWebNWind.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.ProyectoFinalAPI.props",
-      "PackagePath": "buildMultiTargeting\\ProyectoFinalAPI.props"
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.APIWebNWind.props",
+      "PackagePath": "buildMultiTargeting\\APIWebNWind.props"
     },
     {
-      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.ProyectoFinalAPI.props",
-      "PackagePath": "buildTransitive\\ProyectoFinalAPI.props"
+      "Id": "obj\\Release\\net7.0\\staticwebassets\\msbuild.buildTransitive.APIWebNWind.props",
+      "PackagePath": "buildTransitive\\APIWebNWind.props"
     }
   ],
   "ElementsToRemove": []

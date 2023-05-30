@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "m1AVGctamPZBJisnDeM9QKX6oEx806oyIJcZgdbLhwYbK/15eHhb4zD8ZZ8JyyizKRN1/yd3vLIjNTq85c0G+A==",
+  "dgSpecHash": "Rdeozugq5LNUzxb1+ecgqXeHj6qGNrGNPZea6BM9eQ3FgGdc1tu20Ni6FlUU2kf0jCjGjbFXgJPo4uQmp4Z0ug==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI.csproj",
+  "projectFilePath": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Giovanny\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Giovanny\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
