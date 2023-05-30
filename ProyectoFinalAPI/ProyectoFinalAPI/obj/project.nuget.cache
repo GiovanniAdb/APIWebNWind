@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "RVGRoIAmV9Fg69KyqK8YxSIXZrnbPQX+BBkV+pG8y0tdxB2Eat0exP447Hc1G2e4b4ObVfSY41cXuQDc4q4eQA==",
+  "dgSpecHash": "kwRRYA2/+Xe+IXW8VubmGhXyJRNScMyLRbEjvfGETt3ktkYKhURQP2ubFwCmVJi/4vzrCZ1woOxpb9AvuDX9Gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI.csproj",
+  "projectFilePath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Mario\\.nuget\\packages\\google.protobuf\\3.21.9\\google.protobuf.3.21.9.nupkg.sha512",
     "C:\\Users\\Mario\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
@@ -62,12 +62,5 @@
     "C:\\Users\\Mario\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512",
     "C:\\Users\\Mario\\.nuget\\packages\\system.windows.extensions\\4.7.0\\system.windows.extensions.4.7.0.nupkg.sha512"
   ],
-  "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problema al leer el archivo de caché C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\obj\\project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    }
-  ]
+  "logs": []
 }

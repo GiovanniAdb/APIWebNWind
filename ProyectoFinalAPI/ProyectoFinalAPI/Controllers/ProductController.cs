@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using ProyectoFinalAPI.Data;
 using ProyectoFinalAPI.Models;
 using System.Globalization;
@@ -234,9 +235,9 @@ namespace ProyectoFinalAPI.Controllers
                         join1 => join1.OrderDetail.OrderId,
                         o => o.OrderId,
                         (join1, o) => new { join1.Product, join1.OrderDetail, Order = o })
-                    .Where(join2 => join2.order.OrderDate.Value >= startDate &&
-                                     join2.order.OrderDate.Value <= endDate &&
-                                     ((join2.order.OrderDate.Value.Month - 1) / 3 + 1) == quarter)
+                    .Where(join2 => join2.Order.OrderDate.Value >= startDate &&
+                                     join2.Order.OrderDate.Value <= endDate &&
+                                     ((join2.Order.OrderDate.Value.Month - 1) / 3 + 1) == quarter)
                     .GroupBy(join2 => new { join2.Product.ProductName, Quarter = quarter })
                     .Select(group => new
                     {
@@ -265,7 +266,7 @@ namespace ProyectoFinalAPI.Controllers
                     (p, od) => new
                     {
                         Producto = p.ProductName,
-                        Fecha = od.order.OrderDate,
+                        Fecha = od.Order.OrderDate,
                         Ventas = od.Quantity * od.UnitPrice
                     })
                 .Where(pod => pod.Producto == productName)
@@ -296,7 +297,7 @@ namespace ProyectoFinalAPI.Controllers
                     (p, od) => new
                     {
                         Producto = p.ProductName,
-                        Fecha = od.order.OrderDate,
+                        Fecha = od.Order.OrderDate,
                         Ventas = od.Quantity * od.UnitPrice
                     })
                 .Where(pod => pod.Producto == productName)
