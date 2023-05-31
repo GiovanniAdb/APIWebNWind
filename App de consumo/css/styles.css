@@ -1,8 +1,51 @@
-* {
-	margin: auto;
-	padding: auto;
-}
 
+
+  body {
+    padding: 20px;
+  }
+  .container {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+  :root {
+	font-size: 20px;
+	box-sizing: inherit;
+  }
+  
+  *,
+  *:before,
+  *:after {
+	box-sizing: inherit;
+  }
+  
+  p {
+	margin: 0;
+  }
+  
+  p:not(:last-child) {
+	margin-bottom: 1.5em;
+  }
+  
+  /* Background styles */
 body {
-	background-color: red;
+    background-color: #000000;
+    background-image: 
+        radial-gradient(at 47% 33%, hsl(327, 56%, 32%) 0, transparent 59%), 
+        radial-gradient(at 82% 65%, hsl(0, 0%, 0%) 0, transparent 100%);
 }
+  
+.card {
+	max-width: 300px;
+	min-height: 200px;
+	/* From https://css.glass */
+background: rgba(255, 52, 52, 0.01);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(5.8px);
+-webkit-backdrop-filter: blur(5.8px);
+border: 1px solid rgba(255, 255, 255, 0.29);}
+  
+.card-footer {
+	font-size: 0.65em;
+	color: #446;
+  }
