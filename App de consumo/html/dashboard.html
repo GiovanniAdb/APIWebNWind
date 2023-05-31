@@ -5,6 +5,13 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
+    
+    <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.datatables.net/rowgroup/1.3.1/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
     <title></title>
 </head>
 
@@ -50,6 +57,38 @@
     </div>
 
     <div class="container mt-4 d-flex justify-content-center">
+        <span id="titulo" class="badge badge-pill badge-light"></span>
+
+        <div class="row">
+            <div class="col-md-2">
+                <button onclick="getPeriodo()" id="btnBuscar" class="btn btn-light">Buscar</button>
+            </div>
+        </div>
+    </div>
+    <table id="tblProductos" class="table table-striped table-dark display mt-4" style="width:100%">
+        
+    </table>
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables -->
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+    <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
+    <!-- Buttons extension -->
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+    <!-- extension -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+
+    <!-- Tercer consulta-->
+    <div class="container mt-4 d-flex justify-content-center">
         <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
             <div class="card-header">3ra consulta </div>
             <div class="card-body">
@@ -76,8 +115,8 @@
 
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/charts.js">
-    </script>
+    <script src="../js/charts.js"></script>
+    <script src="../js/periodo.js"></script>
 </body>
 
 </html>
