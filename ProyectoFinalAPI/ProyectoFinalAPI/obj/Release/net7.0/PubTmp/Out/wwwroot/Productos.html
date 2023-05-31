@@ -37,7 +37,11 @@
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+>>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
 =======
     <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
 >>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
@@ -69,6 +73,7 @@
 
                         titulo.textContent = "Productos Top 5" + year;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
                     tabla = $(idTabla).DataTable({
                         data: info,
@@ -135,6 +140,18 @@
                             "fnRowCallback": function (nRow, aData, iDisplayIndex) {
                                 // Añadir estilo a una fila o columna dependiendo de algún valor
                             },
+=======
+                        tabla = $(idTabla).DataTable({
+                            data: info,
+                            columns: [
+                                { title: 'Producto', data: 'nombre' },
+                                { title: 'Trimestre', data: 'trimestre' },
+                                { title: 'Unidades Vendidas', data: 'unidadesVendidas' }
+                            ],
+                            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                                // Añadir estilo a una fila o columna dependiendo de algún valor
+                            },
+>>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
                             "fnInitComplete": function (oSettings, json) {
                                 // Configuración de los filtros individuales
                             },
@@ -182,6 +199,9 @@
             } else {
                 alert("Debes ingresar un año válido");
             }
+<<<<<<< HEAD
+>>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
+=======
 >>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
         });
     </script>
