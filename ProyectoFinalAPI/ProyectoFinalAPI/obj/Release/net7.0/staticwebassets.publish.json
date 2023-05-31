@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "oUcIIrm/tB1u33603Fb0OT5MphTi3bMycwzVJ1teNO0=",
+  "Hash": "GnjH2gEYcMYG1Khrtlv9iwdX/V5buWl2xXZe+YTQhxM=",
   "Source": "APIWebNWind",
   "BasePath": "_content/APIWebNWind",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "APIWebNWind\\wwwroot",
       "Source": "APIWebNWind",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\comportamiento.html",
+      "Identity": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\comportamiento.html",
       "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "RelativePath": "comportamiento.html",
       "AssetKind": "All",
@@ -34,10 +34,10 @@
       "OriginalItemSpec": "wwwroot\\comportamiento.html"
     },
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
+      "Identity": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\grafica.html",
       "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "RelativePath": "grafica.html",
       "AssetKind": "All",
@@ -51,10 +51,10 @@
       "OriginalItemSpec": "wwwroot\\grafica.html"
     },
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\index.html",
+      "Identity": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\index.html",
       "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "RelativePath": "index.html",
       "AssetKind": "All",
@@ -68,10 +68,10 @@
       "OriginalItemSpec": "wwwroot\\index.html"
     },
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\Productos.html",
+      "Identity": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\Productos.html",
       "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "RelativePath": "Productos.html",
       "AssetKind": "All",
@@ -85,10 +85,10 @@
       "OriginalItemSpec": "wwwroot\\Productos.html"
     },
     {
-      "Identity": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\terceraConsulta.html",
+      "Identity": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\terceraConsulta.html",
       "SourceId": "APIWebNWind",
       "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Giovanny\\Downloads\\ProyectoFinalAPI\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
+      "ContentRoot": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\wwwroot\\",
       "BasePath": "_content/APIWebNWind",
       "RelativePath": "terceraConsulta.html",
       "AssetKind": "All",

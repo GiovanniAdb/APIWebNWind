@@ -12,7 +12,7 @@ builder.Services.AddDbContext<NorthwindContext>(options =>
 builder.Services.AddCors(opts =>
 {
     opts.AddDefaultPolicy(politica =>
-        politica.WithOrigins("http://localhost:84", "http://192.168.1.68:84")
+        politica.WithOrigins("http://localhost:84", "http://192.168.1.68:84", "http://127.0.0.1:5500")
             .AllowAnyMethod()
             .AllowAnyHeader()
             .AllowCredentials()
