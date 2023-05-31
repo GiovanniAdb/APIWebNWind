@@ -7,25 +7,23 @@
     <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/rowgroup/1.3.1/css/rowGroup.dataTables.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.7.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
-    <div class="container mt-4">
-        <h2 id="titulo"></h2>
+    <div class="container mt-4 d-flex justify-content-center">
+        <span id="titulo" class="badge badge-pill badge-warning"></span>
 
         <div class="row">
-            <div class="col-md-4">
-                <input type="text" id="inputYear" class="form-control" placeholder="Ingresa el año" />
-            </div>
             <div class="col-md-2">
-                <button id="btnBuscar" class="btn btn-primary">Buscar</button>
+                <button id="btnBuscar" class="btn btn-outline-dark">Buscar</button>
             </div>
         </div>
-
-        <table id="tblProductos" class="display mt-4" style="width:100%"></table>
     </div>
+    <table id="tblProductos" class="table display mt-4" style="width:100%">
+        <thead class="thead-dark"> </thead>
+    </table>
 
     <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
@@ -38,7 +36,7 @@
     <!-- Buttons extension -->
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-
+    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
     <!-- extension -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
@@ -46,81 +44,84 @@
 
 
     <script>
-        var inputYear = document.getElementById('inputYear');
         var btnBuscar = document.getElementById('btnBuscar');
         var titulo = document.getElementById('titulo');
         var tabla;
 
         btnBuscar.addEventListener('click', function () {
-            var year = inputYear.value;
-            var url = "http://localhost:83/Product/GetTopFiveProducts/" + year;
+            var year = prompt("Ingresa el año");
+            if (year !== null && year !== "") {
+                var url = "http://localhost:83/Product/GetTopFiveProducts/" + year;
 
-            fetch(url)
-                .then(response => response.json())
-                .then(info => {
-                    var idTabla = '#tblProductos';
+                fetch(url)
+                    .then(response => response.json())
+                    .then(info => {
+                        var idTabla = '#tblProductos';
 
-                    // Verificar si la DataTable ya existe y destruirla
-                    if (tabla && $.fn.DataTable.isDataTable(idTabla)) {
-                        tabla.destroy();
-                    }
+                        // Verificar si la DataTable ya existe y destruirla
+                        if (tabla && $.fn.DataTable.isDataTable(idTabla)) {
+                            tabla.destroy();
+                        }
 
-                    titulo.textContent = "Top 5 productos (trimestre) del año " + year;
+                        titulo.textContent = "Productos Top 5 del año: " + year;
 
-                    tabla = $(idTabla).DataTable({
-                        data: info,
-                        columns: [
-                            { title: 'Producto', data: 'nombre' },
-                            { title: 'Trimestre', data: 'trimestre' },
-                            { title: 'Unidades Vendidas', data: 'unidadesVendidas' }
-                        ],
-                        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
-                            // Añadir estilo a una fila o columna dependiendo de algún valor
-                        },
-                        "fnInitComplete": function (oSettings, json) {
-                            // Configuración de los filtros individuales
-                        },
-                        dom: 'Bfrtip',
-                        colReorder: true,
-                        buttons: [
-                            'colvis',
-                            'excelHtml5',
-                            'pdfHtml5',
-                            'copy',
-                            'csv'
-                        ],
-                        order: [[1, 'asc']],
-                        rowGroup: {
-                            startRender: null,
-                            endRender: function (rows, group) {
-                                var sum = rows
-                                    .data()
-                                    .pluck('unidadesVendidas')
-                                    .reduce(function (a, b) {
-                                        return a + b;
-                                    }, 0);
-                                return 'Total Trimestre ' + group + ': ' + sum;
+                        tabla = $(idTabla).DataTable({
+                            data: info,
+                            columns: [
+                                { title: 'Producto', data: 'nombre' },
+                                { title: 'Trimestre', data: 'trimestre' },
+                                { title: 'Unidades Vendidas', data: 'unidadesVendidas' }
+                            ],
+                            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
+                                // Añadir estilo a una fila o columna dependiendo de algún valor
                             },
-                            dataSrc: 'trimestre'
-                        },
-                        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Buscar...",
-                            lengthMenu: "_MENU_",
-                            info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                            infoEmpty: "Mostrando 0 a 0 de 0 registros",
-                            zeroRecords: "No se encontraron registros",
-                            infoFiltered: "(filtrado de _MAX_ registros totales)",
-                            buttons: {
-                                colvis: 'Columnas Visibles',
-                                colvisRestore: 'Restaurar',
-                                colvisNone: 'Ninguna'
-                            }
-                        },
-                    });
-                })
-                .catch(error => console.log(error));
+                            "fnInitComplete": function (oSettings, json) {
+                                // Configuración de los filtros individuales
+                            },
+                            dom: 'Bfrtip',
+                            colReorder: true,
+                            buttons: [
+                                'colvis',
+                                'excelHtml5',
+                                'pdfHtml5',
+                                'copy',
+                                'csv'
+                            ],
+                            order: [[1, 'asc']],
+                            rowGroup: {
+                                startRender: null,
+                                endRender: function (rows, group) {
+                                    var sum = rows
+                                        .data()
+                                        .pluck('unidadesVendidas')
+                                        .reduce(function (a, b) {
+                                            return a + b;
+                                        }, 0);
+                                    return 'Total Trimestre ' + group + ': ' + sum;
+                                },
+                                dataSrc: 'trimestre'
+                            },
+                            lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
+                            language: {
+                                search: "_INPUT_",
+                                searchPlaceholder: "Buscar...",
+                                lengthMenu: "_MENU_",
+                                info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
+                                infoEmpty: "Mostrando 0 a 0 de 0 registros",
+                                zeroRecords: "No se encontraron registros",
+                                infoFiltered: "(filtrado de _MAX_ registros totales)",
+                                buttons: {
+                                    colvis: 'Columnas Visibles',
+                                    colvisRestore: 'Restaurar',
+                                    colvisNone: 'Ninguna'
+                                }
+                            },
+                        });
+                    })
+                    .catch(error => console.log(error));
+            } else {
+                alert("Debes ingresar un año válido");
+            }
         });
     </script>
 </body>

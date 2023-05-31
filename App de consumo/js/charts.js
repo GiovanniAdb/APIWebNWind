@@ -32,14 +32,13 @@ function getSales() {
 function cargarGraficaVentas(info) {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Mes');
+    data.addColumn('string', 'Mes/año');
     data.addColumn('number', 'Ventas');
-    data.addColumn('number', 'Año');
   
     info.forEach(f => {
         console.log(f);
         if (f.month !== undefined) {
-            data.addRow([f.month, f.sales, f.year]);
+            data.addRow([f.yearmonth.toString(), f.sales]);
           }
       });
       
