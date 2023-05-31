@@ -36,15 +36,7 @@
     <!-- Buttons extension -->
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-
-=======
     <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
->>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
-=======
-    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
->>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
     <!-- extension -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
@@ -71,65 +63,8 @@
                             tabla.destroy();
                         }
 
-                        titulo.textContent = "Productos Top 5" + year;
+                        titulo.textContent = "Productos Top 5 del año: " + year;
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-                    tabla = $(idTabla).DataTable({
-                        data: info,
-                        columns: [
-                            { title: 'Producto', data: 'nombre' },
-                            { title: 'Trimestre', data: 'trimestre' },
-                            { title: 'Unidades Vendidas', data: 'unidadesVendidas' }
-                        ],
-                        "fnRowCallback": function (nRow, aData, iDisplayIndex) {
-                            // Añadir estilo a una fila o columna dependiendo de algún valor
-                        },
-                        "fnInitComplete": function (oSettings, json) {
-                            // Configuración de los filtros individuales
-                        },
-                        dom: 'Bfrtip',
-                        colReorder: true,
-                        buttons: [
-                            'colvis',
-                            'excelHtml5',
-                            'pdfHtml5',
-                            'copy',
-                            'csv'
-                        ],
-                        order: [[1, 'asc']],
-                        rowGroup: {
-                            startRender: null,
-                            endRender: function (rows, group) {
-                                var sum = rows
-                                    .data()
-                                    .pluck('unidadesVendidas')
-                                    .reduce(function (a, b) {
-                                        return a + b;
-                                    }, 0);
-                                return 'Total Trimestre ' + group + ': ' + sum;
-                            },
-                            dataSrc: 'trimestre'
-                        },
-                        lengthMenu: [[25, 50, 100, -1], [25, 50, 100, "All"]],
-                        language: {
-                            search: "_INPUT_",
-                            searchPlaceholder: "Buscar...",
-                            lengthMenu: "_MENU_",
-                            info: "Mostrando _START_ a _END_ de _TOTAL_ registros",
-                            infoEmpty: "Mostrando 0 a 0 de 0 registros",
-                            zeroRecords: "No se encontraron registros",
-                            infoFiltered: "(filtrado de _MAX_ registros totales)",
-                            buttons: {
-                                colvis: 'Columnas Visibles',
-                                colvisRestore: 'Restaurar',
-                                colvisNone: 'Ninguna'
-                            }
-                        },
-                    });
-                })
-                .catch(error => console.log(error));
-=======
                         tabla = $(idTabla).DataTable({
                             data: info,
                             columns: [
@@ -140,18 +75,6 @@
                             "fnRowCallback": function (nRow, aData, iDisplayIndex) {
                                 // Añadir estilo a una fila o columna dependiendo de algún valor
                             },
-=======
-                        tabla = $(idTabla).DataTable({
-                            data: info,
-                            columns: [
-                                { title: 'Producto', data: 'nombre' },
-                                { title: 'Trimestre', data: 'trimestre' },
-                                { title: 'Unidades Vendidas', data: 'unidadesVendidas' }
-                            ],
-                            "fnRowCallback": function (nRow, aData, iDisplayIndex) {
-                                // Añadir estilo a una fila o columna dependiendo de algún valor
-                            },
->>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
                             "fnInitComplete": function (oSettings, json) {
                                 // Configuración de los filtros individuales
                             },
@@ -199,10 +122,6 @@
             } else {
                 alert("Debes ingresar un año válido");
             }
-<<<<<<< HEAD
->>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
-=======
->>>>>>> 0993fe7249432d0db7fecacf18cc60b254b31947
         });
     </script>
 </body>

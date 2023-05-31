@@ -286,11 +286,10 @@ namespace ProyectoFinalAPI.Controllers
             return lista;
         }
 
-        [HttpGet]
+        [HttpPost]
         [Route("GetDesgloseVentasMensualesChart")]
-        public Dictionary<string, decimal> GetDesgloseVentasMensualesChart(string productName)
+        public IEnumerable<object> GetDesgloseVentasMensualesChart(string productName)
         {
-            var data = new Dictionary<string, decimal>();
 
             var results = contexto.Products
                 .Join(contexto.OrderDetails,
@@ -313,17 +312,11 @@ namespace ProyectoFinalAPI.Controllers
                         Mes = podGroup.Key.Fecha != null ? $"{podGroup.Key.Fecha.Year}-{podGroup.Key.Fecha.Month:00}" : string.Empty,
                         Ventas = podGroup.Sum(pod => pod.Ventas)
                     });
-
-            foreach (var result in results)
-            {
-                data.Add(result.Mes, result.Ventas);
-            }
-
-            return data;
+            return results;
         }
         [HttpPost]
         [Route("GetSales")]
-        public IEnumerable<object> GetSalesByMonth([FromBody] SalesRequest request)
+        public IEnumerable<object> GetSales([FromBody] SalesRequest request)
         {
             DateTime startDate = request.StartDate;
             DateTime endDate = request.EndDate;
@@ -335,8 +328,9 @@ namespace ProyectoFinalAPI.Controllers
                 orderby g.Key.Year, g.Key.Month
                 select new
                 {
-                    YearMonth = g.Key.Year * 100 + g.Key.Month,
-                    Sales = g.Sum(x => x.UnitPrice * x.Quantity)
+                    month = g.Key.Month,
+                    year = g.Key.Year,
+                    sales = g.Sum(x => x.UnitPrice * x.Quantity)
                 };
 
             return result;

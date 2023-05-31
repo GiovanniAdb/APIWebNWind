@@ -32,13 +32,13 @@ function getSales() {
 function cargarGraficaVentas(info) {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Mes/año');
+    data.addColumn('string', 'Mes');
     data.addColumn('number', 'Ventas');
-  
-    info.forEach(f => {
-        console.log(f);
-        if (f.month !== undefined) {
-            data.addRow([f.yearmonth.toString(), f.sales]);
+    data.addColumn('number', "Anio")
+    info.forEach(i => {
+        console.log(i);
+        if (i.month !== undefined) {
+            data.addRow([i.month.toString(), i.sales, i.year]);
           }
       });
       
@@ -51,7 +51,7 @@ function cargarGraficaVentas(info) {
       'controlType': 'NumberRangeFilter',
       'containerId': 'filter_div',
       'options': {
-        'filterColumnLabel': 'Año'
+        'filterColumnLabel': 'Anio'
       }
     });
   
