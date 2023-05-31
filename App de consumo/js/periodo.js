@@ -5,7 +5,7 @@ var btnBuscar = document.getElementById('btnBuscar');
         function getPeriodo() {
             var year = prompt("Ingresa el año");
             if (year !== null && year !== "") {
-                var url = "http://localhost:83/Product/GetTopFiveProducts/" + year;
+                var url = "http://192.168.155.17:83/Product/GetTopFiveProducts/" + year;
 
                 fetch(url)
                     .then(response => response.json())

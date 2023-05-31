@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css">
-    
+
     <link href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/colreorder/1.6.2/css/colReorder.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
@@ -15,110 +15,125 @@
 </head>
 
 <body>
-    <div class="container mt-4 d-flex justify-content-center">
-        <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
-            <div class="card-header">1er consulta </div>
-            <div class="card-body">
-                <h5 class="card-title">Comportamiento ($) </h5>
-                <p class="card-text">De ventas por mes para un periodo de fechas indicado.</p>
+    <div id="main-container">
+        <div class="container mt-4 d-flex justify-content-center">
+            <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+                <div class="card-header">1er consulta </div>
+                <div class="card-body">
+                    <h5 class="card-title">Comportamiento ($) </h5>
+                    <p class="card-text">De ventas por mes para un periodo de fechas indicado.</p>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="w-100 d-flex justify-content-center mt-4">
-        <div class="mb-3 me-4">
-            <label for="exampleFormControlInput1" class="form-label">Fecha
-                de inicio</label>
-            <input type="date" class="form-control" id='start' placeholder="Fecha de inicio YYYY-MM-DD">
-        </div>
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label">Fecha
-                de cierre</label>
-            <input type="date" class="form-control" id='end' placeholder="Fecha de cierre YYYY-MM-DD">
-        </div>
-    </div>
-    <button onclick="getSales()" class="btn btn-outline-light w-25 d-block
-            m-auto" >Ventas</button>
-    <div id="dashboard_div" class="d-flex flex-column justify-content-center align-items-center ">
-        <div id="filter_div" class="m-5"></div>
-        <div id="chart_div" class="m-5"></div>
-    </div>
-    <div id="table-div">
-
-    </div>
-
-    <div class="container mt-4 d-flex justify-content-center">
-        <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
-            <div class="card-header">2da consulta </div>
-            <div class="card-body">
-                <h5 class="card-title">En un periodo indicado de 1 año </h5>
-                <p class="card-text">Desglosar por trimestre, cuales fueron los productos
-                    dentro del top 5, considerando las unidades vendidas.</p>
+        <div class="w-100 d-flex justify-content-center mt-4">
+            <div class="mb-3 me-4">
+                <label for="exampleFormControlInput1" class="form-label">Fecha
+                    de inicio</label>
+                <input type="date" value="1996-01-01" class="form-control" id='start'
+                    placeholder="Fecha de inicio YYYY-MM-DD">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Fecha
+                    de cierre</label>
+                <input type="date" value="2000-01-01" class="form-control" id='end'
+                    placeholder="Fecha de cierre YYYY-MM-DD">
             </div>
         </div>
-    </div>
+        <button onclick="getSales()" class="btn btn-dark w-25 d-block
+                    m-auto">Ventas</button>
+        <div id="dashboard_div" class="d-flex flex-column justify-content-center align-items-center ">
+            <div id="filter_div" class="m-5"></div>
+            <div id="chart_div" class="m-5"></div>
+        </div>
+        <table id="table-div" class="table table-striped table-dark display mt-4" style="width:100%">
 
-    <div class="container mt-4 d-flex justify-content-center">
-        <span id="titulo" class="badge badge-pill badge-light"></span>
+        </table>
 
-        <div class="row">
-            <div class="col-md-2">
-                <button onclick="getPeriodo()" id="btnBuscar" class="btn btn-light">Buscar</button>
+        <div class="container mt-4 d-flex justify-content-center">
+            <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+                <div class="card-header">2da consulta </div>
+                <div class="card-body">
+                    <h5 class="card-title">En un periodo indicado de 1 año </h5>
+                    <p class="card-text">Desglosar por trimestre, cuales fueron los productos
+                        dentro del top 5, considerando las unidades vendidas.</p>
+                </div>
             </div>
         </div>
-    </div>
-    <table id="tblProductos" class="table table-striped table-dark display mt-4" style="width:100%">
+
+        <div class="container mt-4 d-flex justify-content-center">
+            <span id="titulo" class="badge badge-pill badge-light"></span>
+
+            <div class="row">
+                <div class="col-md-2">
+                    <button onclick="getPeriodo()" id="btnBuscar" class="btn btn-dark">Buscar</button>
+                </div>
+            </div>
+        </div>
+        <table id="tblProductos" class="table table-striped table-dark display mt-4" style="width:100%">
+
+        </table>
+
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+        <!-- DataTables -->
+        <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+        <script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
+        <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
+        <!-- Buttons extension -->
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
+        <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
+        <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
+        <!-- extension -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
+
+
+        <!-- Tercer consulta-->
+        <div class="container mt-4 d-flex justify-content-center">
+            <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
+                <div class="card-header">3ra consulta </div>
+                <div class="card-body">
+                    <h5 class="card-title">Ver ventas de un producto en especifico</h5>
+                    <p class="card-text">Muestra en un grafico las ventanas historicas de un producto filtrando por un
+                        rango de meses.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="w-100 d-flex justify-content-center mt-4">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label badge-light">Producto</label>
+            
+                <select id="productsCombo">
+                    <option value="">Seleccione</option>
+                </select>
+            </div>
+        </div>
+        <button onclick="getDesgloseVentasMensuales()" class="btn btn-dark w-20 d-block
+                    m-auto">Ventas</button>
+
         
-    </table>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- DataTables -->
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
-    <!-- Buttons extension -->
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.html5.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.print.min.js"></script>
-    <link href="https://cdn.datatables.net/buttons/2.3.6/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <!-- extension -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
-
-
-    <!-- Tercer consulta-->
-    <div class="container mt-4 d-flex justify-content-center">
-        <div class="card text-white bg-dark mb-3" style="max-width: 100rem;">
-            <div class="card-header">3ra consulta </div>
-            <div class="card-body">
-                <h5 class="card-title">Ver ventas de un producto en especifico</h5>
-                <p class="card-text">Muestra en un grafico las ventanas historicas de un producto filtrando por un rango de meses.</p>
-            </div>
+        <div id="dashboard_div3" class="d-flex flex-column justify-content-center align-items-center ">
+            <div id="filter_div3" class="m-5"></div>
+            <div id="chart_div3" class="m-5"></div>
         </div>
+
+
+        <table id="table-producto-div" class="table table-striped table-dark display mt-4" style="width:100%">
+
+        </table>
+
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="../js/charts.js"></script>
+        <script src="../js/periodo.js"></script>
     </div>
-
-
-    <div class="w-100 d-flex justify-content-center mt-4">
-        <div class="mb-3">
-            <label for="exampleFormControlInput1" class="form-label badge-light">Producto</label>
-            <input type="text" class="form-control" id='productName'>
-        </div>
-    </div>
-    <button onclick="getDesgloseVentasMensuales()" class="btn btn-outline-light w-20 d-block
-            m-auto">Ventas xd</button>
-    <div id="dashboard_div3" class="d-flex flex-column justify-content-center align-items-center ">
-        <div id="filter_div3" class="m-5"></div>
-        <div id="chart_div3" class="m-5"></div>
-    </div>
-
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../js/charts.js"></script>
-    <script src="../js/periodo.js"></script>
 </body>
 
 </html>
