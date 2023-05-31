@@ -2993,19 +2993,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Mario\\.nuget\\packages\\": {}
+    "C:\\Users\\Giovanny\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
+      "projectUniqueName": "C:\\Users\\Giovanny\\Documents\\GitHub\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
       "projectName": "APIWebNWind",
-      "projectPath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
-      "packagesPath": "C:\\Users\\Mario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Mario\\Downloads\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\obj\\",
+      "projectPath": "C:\\Users\\Giovanny\\Documents\\GitHub\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\APIWebNWind.csproj",
+      "packagesPath": "C:\\Users\\Giovanny\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Giovanny\\Documents\\GitHub\\APIWebNWind\\ProyectoFinalAPI\\ProyectoFinalAPI\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Mario\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Giovanny\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

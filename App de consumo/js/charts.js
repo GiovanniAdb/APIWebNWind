@@ -24,7 +24,7 @@ const getSales = () => {
             })
             .then(info => {
                 cargarGraficaVentas(info);
-                console.log(info)
+                cargarTablaVentas(info)
             })
             .catch(error => console.log(error));
     });
@@ -71,6 +71,12 @@ const cargarGraficaVentas = (info) => {
 
 }
 
+const cargarTablaVentas = (info) =>
+{
+  console.table('cargando info:', info)
+
+}
+
 const getDesgloseVentasMensuales = () => {
     var name = document.getElementById('productName').value;
     console.log(name);
@@ -102,8 +108,8 @@ const cargarGraficaProducto = (info) => {
     data.addColumn('string', 'Anio');
     data.addColumn('number', 'Ventas');
     data.addColumn('number', 'Mes');
+    console.table(info);
     info.forEach(f => {
-        console.log(f);
         if (f.anio !== undefined) {
             data.addRow([f.anio.toString() + '/' + f.mes.toString(), f.ventas, f.mes]);
         }

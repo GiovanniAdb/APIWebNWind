@@ -1,0 +1,40 @@
+# .NET Core
+*.dll
+*.exe
+*.pdb
+*.dll.config
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa][Rr][Mm]/
+[Oo]bj/
+[Ll]og/
+[Bb]in/
+[Tt]est[Rr]esults/
+[Tt]est[Rr]esult*/
+[Nn]ode[Mm]odules/
+[Bb]uild/
+
+# Visual Studio Code
+.vscode/
+
+# Rider
+.idea/
+*.sln.iml
+
+# NuGet
+*.nuget.props
+*.nuget.targets
+*.user
+
+# User-specific files
+*.userprefs
+*.usertasks
+*.suo
+*.sln.docstates
+
+# Build results of an older build process
+_Desktop/
