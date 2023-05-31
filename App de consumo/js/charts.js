@@ -1,4 +1,4 @@
-function getSales() {
+const getSales = () => {
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
     const bodyPost = {
@@ -29,7 +29,7 @@ function getSales() {
             .catch(error => console.log(error));
     });
 }
-function cargarGraficaVentas(info) {
+const cargarGraficaVentas = (info) => {
 
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Mes');
@@ -38,7 +38,7 @@ function cargarGraficaVentas(info) {
     info.forEach(i => {
         console.log(i);
         if (i.month !== undefined) {
-            data.addRow([i.month.toString(), i.sales, i.year]);
+            data.addRow([i.year.toString() + '/' + i.month.toString(), i.sales, i.year]);
           }
       });
       
@@ -59,7 +59,7 @@ function cargarGraficaVentas(info) {
       'chartType': 'PieChart',
       'containerId': 'chart_div',
       'options': {
-        'width': 300,
+        'width': 500,
         'height': 300,
         'pieSliceText': 'value',
         'legend': 'right'
@@ -71,12 +71,17 @@ function cargarGraficaVentas(info) {
 
 }
 
-function getDesgloseVentasMensuales(){
+const getDesgloseVentasMensuales = () => {
     var name = document.getElementById('productName').value;
     console.log(name);
+    
     google.charts.load('current', {'packages':['corechart', 'controls']});
     google.charts.setOnLoadCallback(() => {
-        fetch("http://localhost:83/Product/GetDesgloseVentasMensualesChart?productName=" + name)
+        fetch("http://localhost:83/Product/GetDesgloseVentasMensualesChart?productName=" + name.toString(),{
+            headers: { "Content-Type": "application/json" },
+            credentials: 'include',
+            method: 'POST',
+        })
             .then(response => {
                 if (!response.ok) {
                     throw response;
@@ -85,7 +90,6 @@ function getDesgloseVentasMensuales(){
             })
             .then(info => {
                 console.log(info);
-                console.log(info.type);
                 cargarGraficaProducto(info);
             })
             .catch(error => console.log(error));
@@ -95,16 +99,15 @@ function getDesgloseVentasMensuales(){
 const cargarGraficaProducto = (info) => {
 
     var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Mes');
+    data.addColumn('string', 'Anio');
     data.addColumn('number', 'Ventas');
-    data.addColumn('number', 'Año');
-    console.log(info);
+    data.addColumn('number', 'Mes');
     info.forEach(f => {
         console.log(f);
-        if (f.month !== undefined) {
-            data.addRow([f.month, f.sales, f.year]);
-          }
-      });
+        if (f.anio !== undefined) {
+            data.addRow([f.anio.toString() + '/' + f.mes.toString(), f.ventas, f.mes]);
+        }
+    });
       
   
     var dashboard = new google.visualization.Dashboard(
@@ -115,7 +118,7 @@ const cargarGraficaProducto = (info) => {
       'controlType': 'NumberRangeFilter',
       'containerId': 'filter_div3',
       'options': {
-        'filterColumnLabel': 'Año'
+        'filterColumnLabel': 'Mes'
       }
     });
   
@@ -123,7 +126,7 @@ const cargarGraficaProducto = (info) => {
       'chartType': 'PieChart',
       'containerId': 'chart_div3',
       'options': {
-        'width': 300,
+        'width': 500,
         'height': 300,
         'pieSliceText': 'value',
         'legend': 'right'

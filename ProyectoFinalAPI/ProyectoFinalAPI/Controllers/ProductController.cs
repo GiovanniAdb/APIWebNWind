@@ -309,7 +309,8 @@ namespace ProyectoFinalAPI.Controllers
                 .Select(podGroup =>
                     new
                     {
-                        Mes = podGroup.Key.Fecha != null ? $"{podGroup.Key.Fecha.Year}-{podGroup.Key.Fecha.Month:00}" : string.Empty,
+                        Mes = podGroup.Key.Fecha.Month,
+                        Anio = podGroup.Key.Fecha.Year,
                         Ventas = podGroup.Sum(pod => pod.Ventas)
                     });
             return results;
