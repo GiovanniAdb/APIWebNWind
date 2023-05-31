@@ -1,84 +1,62 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8" />
-    <title>Dashboard de Ventas</title>
+    <meta charset="UTF-8">
+    <title>Dashboard</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart', 'controls'] });
+        google.charts.setOnLoadCallback(fetchDataAndDrawDashboard);
+
+        function fetchDataAndDrawDashboard() {
+            fetch('URL_DEL_ENDPOINT')
+                .then(response => response.json())
+                .then(data => {
+                    drawDashboard(data);
+                })
+                .catch(error => console.error('Error:', error));
+        }
+
+        function drawDashboard(data) {
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn('string', 'Name');
+            dataTable.addColumn('number', 'Donuts eaten');
+
+            // Inserta los datos recibidos en el DataTable
+            data.forEach(item => {
+                dataTable.addRow([item.name, item.donutsEaten]);
+            });
+
+            var dashboard = new google.visualization.Dashboard(document.getElementById('dashboard_div'));
+
+            var donutRangeSlider = new google.visualization.ControlWrapper({
+                'controlType': 'NumberRangeFilter',
+                'containerId': 'filter_div',
+                'options': {
+                    'filterColumnLabel': 'Donuts eaten'
+                }
+            });
+
+            var pieChart = new google.visualization.ChartWrapper({
+                'chartType': 'PieChart',
+                'containerId': 'chart_div',
+                'options': {
+                    'width': 300,
+                    'height': 300,
+                    'pieSliceText': 'value',
+                    'legend': 'right'
+                }
+            });
+
+            dashboard.bind(donutRangeSlider, pieChart);
+            dashboard.draw(dataTable);
+        }
+    </script>
 </head>
 <body>
-    <div class="container mt-4">
-        <h2 id="titulo"></h2>
-
-        <div class="row">
-            <div class="col-md-4">
-                <input type="text" id="inputStartDate" class="form-control" placeholder="Fecha de inicio (YYYY-MM-DD)" />
-            </div>
-            <div class="col-md-4">
-                <input type="text" id="inputEndDate" class="form-control" placeholder="Fecha de fin (YYYY-MM-DD)" />
-            </div>
-            <div class="col-md-2">
-                <button id="btnBuscar" class="btn btn-primary">Buscar</button>
-            </div>
-        </div>
-
-        <div id="chart_div" style="width: 100%; height: 400px;"></div>
+    <div id="dashboard_div">
+        <div id="filter_div"></div>
+        <div id="chart_div"></div>
     </div>
-
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-    <!-- DataTables -->
-    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/colreorder/1.6.2/js/dataTables.colReorder.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/dataTables.buttons.min.js"></script>
-    <script src="https://cdn.datatables.net/buttons/2.3.6/js/buttons.colVis.min.js"></script>
-    <script src="https://cdn.datatables.net/rowgroup/1.3.1/js/dataTables.rowGroup.min.js"></script>
-
-    <script>
-        var inputStartDate = document.getElementById('inputStartDate');
-        var inputEndDate = document.getElementById('inputEndDate');
-        var btnBuscar = document.getElementById('btnBuscar');
-        var titulo = document.getElementById('titulo');
-        var chart;
-
-        google.charts.load('current', { packages: ['corechart'] });
-
-        btnBuscar.addEventListener('click', function () {
-            var startDate = inputStartDate.value;
-            var endDate = inputEndDate.value;
-
-            var url = "http://localhost:83/comportamiento/GetSalesByProduct?startDate=" + startDate + "&endDate=" + endDate;
-
-            fetch(url)
-                .then(response => response.json())
-                .then(info => {
-                    titulo.textContent = "Comportamiento de ventas por mes (" + startDate + " - " + endDate + ")";
-
-                    var data = new google.visualization.DataTable();
-                    data.addColumn('string', 'Mes');
-                    data.addColumn('number', 'Ventas');
-
-                    info.forEach(item => {
-                        data.addRow([item.Mes, item.Ventas]);
-                    });
-
-                    var options = {
-                        title: 'Comportamiento de ventas por mes',
-                        hAxis: { title: 'Mes' },
-                        vAxis: { title: 'Ventas' },
-                        bars: 'vertical'
-                    };
-
-                    // Verificar si el gráfico ya existe y destruirlo
-                    if (chart) {
-                        chart.clearChart();
-                    }
-
-                    // Crear el gráfico de barras
-                    chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
-                    chart.draw(data, options);
-                })
-                .catch(error => console.log(error));
-        });
-    </script>
 </body>
 </html>
